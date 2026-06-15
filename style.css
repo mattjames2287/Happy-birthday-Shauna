@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 35%),
+    linear-gradient(145deg, #281017, #12080c 60%, #050304);
+  color: #fff8f3;
+  min-height: 100vh;
+}
+
+.page {
+  width: min(920px, 100%);
+  margin: 0 auto;
+  padding: 28px 18px 42px;
+}
+
+.hero {
+  text-align: center;
+  padding: 46px 18px 24px;
+}
+
+.heart {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 12px;
+  color: #f0c9ba;
+  margin: 0 0 12px;
+}
+
+h1 {
+  font-size: clamp(42px, 11vw, 82px);
+  line-height: 0.95;
+  margin: 0;
+  font-weight: 700;
+}
+
+.subtitle {
+  max-width: 640px;
+  margin: 20px auto 0;
+  font-size: 20px;
+  line-height: 1.45;
+  color: #f4d9cf;
+}
+
+.player-card,
+.message-card,
+.photos {
+  background: rgba(255, 255, 255, 0.09);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+  border-radius: 28px;
+  backdrop-filter: blur(14px);
+}
+
+.player-card {
+  margin: 34px auto 0;
+  max-width: 620px;
+  padding: 24px;
+}
+
+.song-title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+audio {
+  width: 100%;
+}
+
+.tap-note,
+.photo-note {
+  color: #eacdc3;
+  font-size: 14px;
+  margin: 14px 0 0;
+}
+
+.message-card {
+  margin: 28px 0;
+  padding: 30px;
+}
+
+.message-card h2,
+.photos h2 {
+  margin: 0 0 14px;
+  font-size: 30px;
+}
+
+.message-card p {
+  font-size: 18px;
+  line-height: 1.65;
+  color: #fff1eb;
+}
+
+.signature {
+  font-size: 24px !important;
+  font-weight: 700;
+  margin-top: 22px;
+}
+
+.photos {
+  padding: 26px;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.photo-grid img {
+  width: 100%;
+  aspect-ratio: 1 / 1.15;
+  object-fit: cover;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.16);
+}
+
+footer {
+  text-align: center;
+  margin-top: 26px;
+  color: #eecfc5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .page {
+    padding: 18px 12px 30px;
+  }
+
+  .hero {
+    padding-top: 36px;
+  }
+
+  .message-card,
+  .photos,
+  .player-card {
+    border-radius: 22px;
+    padding: 20px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .message-card p {
+    font-size: 17px;
+  }
+}
