@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
@@ -13,14 +19,14 @@ body {
 }
 
 .page {
-  width: min(920px, 100%);
+  width: min(920px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 28px 18px 42px;
+  padding: 28px 0 42px;
 }
 
 .hero {
   text-align: center;
-  padding: 46px 18px 24px;
+  padding: 36px 0 24px;
 }
 
 .heart {
@@ -46,7 +52,7 @@ h1 {
 .subtitle {
   max-width: 640px;
   margin: 20px auto 0;
-  font-size: 20px;
+  font-size: clamp(18px, 4.5vw, 22px);
   line-height: 1.45;
   color: #f4d9cf;
 }
@@ -54,6 +60,7 @@ h1 {
 .player-card,
 .message-card,
 .photos {
+  width: 100%;
   background: rgba(255, 255, 255, 0.09);
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
@@ -69,12 +76,13 @@ h1 {
 
 .song-title {
   margin: 0 0 16px;
-  font-size: 24px;
+  font-size: clamp(21px, 5vw, 28px);
   font-weight: 700;
 }
 
 audio {
   width: 100%;
+  display: block;
 }
 
 .tap-note,
@@ -85,30 +93,30 @@ audio {
 }
 
 .message-card {
-  margin: 28px 0;
-  padding: 30px;
+  margin: 28px auto;
+  padding: clamp(22px, 5vw, 34px);
 }
 
 .message-card h2,
 .photos h2 {
   margin: 0 0 14px;
-  font-size: 30px;
+  font-size: clamp(30px, 7vw, 38px);
 }
 
 .message-card p {
-  font-size: 18px;
+  font-size: clamp(17px, 4.2vw, 20px);
   line-height: 1.65;
   color: #fff1eb;
 }
 
 .signature {
-  font-size: 24px !important;
+  font-size: 25px !important;
   font-weight: 700;
   margin-top: 22px;
 }
 
 .photos {
-  padding: 26px;
+  padding: clamp(20px, 5vw, 30px);
 }
 
 .photo-grid {
@@ -121,9 +129,11 @@ audio {
   width: 100%;
   aspect-ratio: 1 / 1.15;
   object-fit: cover;
+  object-position: center;
   border-radius: 20px;
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.16);
+  display: block;
 }
 
 footer {
@@ -132,15 +142,18 @@ footer {
   color: #eecfc5;
   font-size: 15px;
   line-height: 1.5;
+  padding: 0 12px;
 }
 
 @media (max-width: 700px) {
   .page {
-    padding: 18px 12px 30px;
+    width: calc(100% - 22px);
+    padding-top: 18px;
+    padding-bottom: 30px;
   }
 
   .hero {
-    padding-top: 36px;
+    padding-top: 28px;
   }
 
   .message-card,
@@ -154,7 +167,7 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .message-card p {
-    font-size: 17px;
+  .photo-grid img {
+    aspect-ratio: 4 / 5;
   }
 }
