@@ -1,25 +1,151 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Happy 30th Shauna</title><link rel="stylesheet" href="style.css"></head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Happy 30th Shauna</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 <body>
-<div class="poster">
-<div class="overlay-center">
-<button class="play-btn" onclick="openVideo()">▶<span>PLAY</span></button>
-<div class="mini-links">
-<button onclick="openLetter()">♡ Read My Letter</button>
-<button onclick="openLyrics()">♫ Song Lyrics</button>
-</div>
-</div>
-</div>
+  <main class="landing" aria-label="Happy 30th Shauna landing page">
+    <div class="poster-wrap">
+      <img class="poster" src="assets/landing-background.png" alt="Happy 30th Shauna" />
 
-<div id="videoModal" class="modal"><div class="modal-inner"><span class="close" onclick="closeModal('videoModal')">×</span><video id="video" controls><source src="assets/slideshow.mp4" type="video/mp4"></video></div></div>
+      <button id="playBtn" class="hotspot play-hotspot" type="button" aria-label="Play slideshow"></button>
+      <button class="hotspot letter-hotspot" type="button" data-open="letterModal" aria-label="Read My Letter"></button>
+      <button class="hotspot lyrics-hotspot" type="button" data-open="lyricsModal" aria-label="Song Lyrics"></button>
+    </div>
+  </main>
 
-<div id="letterModal" class="modal"><div class="panel"><span class="close" onclick="closeModal('letterModal')">×</span><h2>My Letter</h2><p>Shauna, I wanted to give you something that was more than just a gift. Something you could keep, come back to, and know exactly how much you mean to me. Almost ten years together, marriage, our home, our memories, and Lorenzo — every part of this life is better because it is with you. Happy 30th birthday. I love you more than I could ever fit into one song. — Matt</p></div></div>
+  <div class="modal" id="videoModal" aria-hidden="true">
+    <div class="video-box">
+      <button class="close" type="button" data-close="videoModal" aria-label="Close">×</button>
+      <video id="storyVideo" controls playsinline preload="metadata">
+        <source src="assets/third-time-changed.mp4" type="video/mp4" />
+        Your browser does not support video playback.
+      </video>
+    </div>
+  </div>
 
-<div id="lyricsModal" class="modal"><div class="panel"><span class="close" onclick="closeModal('lyricsModal')">×</span><h2>Song Lyrics</h2><p>Here's to thirty, Shauna... and here's to forever.</p></div></div>
+  <div class="modal" id="letterModal" aria-hidden="true">
+    <article class="panel">
+      <button class="close" type="button" data-close="letterModal" aria-label="Close">×</button>
+      <h2>My Letter</h2>
+      <div class="copy">
+        <p>Shauna,</p>
+<p>I wanted to give you something that was more than just a gift. Something you could keep, come back to, and know exactly how much you mean to me.</p>
+<p>From the day we met at that vape store to today, you have been my greatest blessing. You gave me a chance, we built a life, and somewhere along the way our love became a family.</p>
+<p>Almost ten years together, marriage, our home, our memories, and Lorenzo — every part of this life is better because it is with you.</p>
+<p>I am so proud of the woman, wife, and mom you are. Happy 30th birthday. I love you more than I could ever fit into one song.</p>
+<p>— Matt</p>
+      </div>
+    </article>
+  </div>
 
-<script>
-function openVideo(){document.getElementById('videoModal').style.display='flex';document.getElementById('video').play();}
-function openLetter(){document.getElementById('letterModal').style.display='flex';}
-function openLyrics(){document.getElementById('lyricsModal').style.display='flex';}
-function closeModal(id){document.getElementById(id).style.display='none';let v=document.getElementById('video');if(v)v.pause();}
-</script>
-</body></html>
+  <div class="modal" id="lyricsModal" aria-hidden="true">
+    <article class="panel lyrics-panel">
+      <button class="close" type="button" data-close="lyricsModal" aria-label="Close">×</button>
+      <h2>Song Lyrics</h2>
+      <pre>[Upbeat Country Love Song]
+
+[Verse 1]
+
+I still remember that old vape store,
+You&#x27;d walk in and I&#x27;d look for more,
+I asked you out once, you said no,
+Asked you twice, still nowhere to go.
+
+But on that third time something changed,
+You took a chance and my whole world changed,
+I always joke that I had to make you like me,
+Now look at us, baby, look where we&#x27;d be.
+
+[Pre-Chorus]
+
+Funny how a little &quot;yes&quot;
+Can turn into a life like this.
+
+[Big Chorus]
+
+Here&#x27;s to thirty, Shauna, look at you,
+Still the best thing that I&#x27;ve ever known,
+From a girl who wasn&#x27;t looking for a love like this,
+To the woman that I can&#x27;t imagine life without.
+
+Through every mile and every dream we&#x27;ve chased,
+Every memory time could never erase,
+And after all these years it&#x27;s still true,
+My favorite part of life is you.
+
+[Verse 2]
+
+Almost two years before I got down on one knee,
+Already knew you were the one for me,
+Then almost two more before we said &quot;I do,&quot;
+A quiet wedding with just me and you.
+
+The world was crazy, everything shut down,
+But nothing was gonna keep us from that vow,
+Then the next year we threw the party we missed,
+Celebrating forever with the people we love best.
+
+[Pre-Chorus]
+
+Looking back now, it&#x27;s hard to see,
+How lucky life has been to me.
+
+[Big Chorus]
+
+Here&#x27;s to thirty, Shauna, look at you,
+Still the best thing that I&#x27;ve ever known,
+From a girl who wasn&#x27;t looking for a love like this,
+To the woman that I can&#x27;t imagine life without.
+
+Through every mile and every dream we&#x27;ve chased,
+Every memory time could never erase,
+And after all these years it&#x27;s still true,
+My favorite part of life is you.
+
+[Half-Time Bridge]
+
+Then came Lorenzo, straight from love,
+A little piece of us sent from above,
+And watching you become a mom
+Made me love you even more than I thought possible.
+
+Our family grew,
+Our dreams got bigger too,
+And every day I thank God
+For the life I&#x27;ve built with you.
+
+[Final Chorus]
+
+So here&#x27;s to thirty, Shauna, this one&#x27;s for you,
+For every dream we&#x27;ve chased and every one come true,
+For Lorenzo&#x27;s laugh and the home we&#x27;ve made,
+For every moment that led us to today.
+
+From that vape shop all those years ago,
+To a family and a love that only grows,
+And if I had one wish left to choose,
+I&#x27;d spend forever growing old with you.
+
+[Outro]
+
+Happy Birthday, Shauna...
+
+From the guy who asked you out three times.
+
+To the woman who gave him a family.
+
+Here&#x27;s to Lorenzo.
+
+Here&#x27;s to thirty.
+
+And here&#x27;s to forever.</pre>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
