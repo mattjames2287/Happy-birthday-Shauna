@@ -48,5 +48,5 @@ document.querySelectorAll(".modal").forEach((modal) => {
 
 document.addEventListener("keydown", (event) => {
   if (event.key !== "Escape") return;
-  document.querySelectorAll(".modal.show").forEach((modal) => closeModal(modal.id);
+  document.querySelectorAll(".modal.show").forEach((modal) => closeModal(modal.id));
 });

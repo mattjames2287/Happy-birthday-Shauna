@@ -7,13 +7,22 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="landing" aria-label="Happy 30th Shauna landing page">
-    <div class="poster-wrap">
-      <img class="poster" src="assets/landing-background.png" alt="Happy 30th Shauna" />
+  <main class="landing">
+    <img class="poster" src="assets/landing-background.png" alt="Happy 30th Shauna" />
 
-      <button id="playBtn" class="hotspot play-hotspot" type="button" aria-label="Play slideshow"></button>
-      <button class="hotspot letter-hotspot" type="button" data-open="letterModal" aria-label="Read My Letter"></button>
-      <button class="hotspot lyrics-hotspot" type="button" data-open="lyricsModal" aria-label="Song Lyrics"></button>
+    <div class="button-layer" aria-label="Gift controls">
+      <button id="playBtn" class="real-btn play-real" type="button">
+        <span class="play-symbol">▶</span>
+        <span>PLAY</span>
+      </button>
+
+      <button class="real-btn small-real letter-real" type="button" data-open="letterModal">
+        ♡ Read My Letter
+      </button>
+
+      <button class="real-btn small-real lyrics-real" type="button" data-open="lyricsModal">
+        ♫ Song Lyrics
+      </button>
     </div>
   </main>
 
