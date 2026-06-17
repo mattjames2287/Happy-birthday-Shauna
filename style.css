@@ -38,7 +38,6 @@ body {
   -webkit-user-drag: none;
 }
 
-/* Invisible clickable areas placed over the generated design's visible buttons */
 .hotspot {
   position: absolute;
   border: 0;
@@ -51,30 +50,29 @@ body {
 .hotspot:focus-visible {
   outline: 2px solid rgba(247, 199, 111, 0.95);
   outline-offset: 5px;
-  box-shadow: 0 0 30px rgba(247, 199, 111, 0.7);
 }
 
 .play-hotspot {
-  left: 38%;
-  top: 48.5%;
-  width: 24%;
-  height: 16%;
+  left: 37%;
+  top: 48%;
+  width: 26%;
+  height: 17%;
   border-radius: 999px;
 }
 
 .letter-hotspot {
-  left: 31.5%;
-  top: 66.5%;
-  width: 37%;
-  height: 5.8%;
+  left: 29%;
+  top: 66%;
+  width: 42%;
+  height: 6.4%;
   border-radius: 14px;
 }
 
 .lyrics-hotspot {
-  left: 31.5%;
-  top: 74%;
-  width: 37%;
-  height: 5.8%;
+  left: 29%;
+  top: 73.5%;
+  width: 42%;
+  height: 6.4%;
   border-radius: 14px;
 }
 
@@ -86,9 +84,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
-  background:
-    radial-gradient(circle at center, rgba(247, 199, 111, .12), transparent 34%),
-    rgba(0, 0, 0, .94);
+  background: rgba(0, 0, 0, .94);
 }
 
 .modal.show {
@@ -135,10 +131,7 @@ video {
   padding: 30px;
   border-radius: 22px;
   border: 1px solid rgba(247, 199, 111, .72);
-  background:
-    radial-gradient(circle at top, rgba(247, 199, 111, .13), transparent 27%),
-    rgba(8, 5, 2, .97);
-  box-shadow: 0 0 54px rgba(247, 199, 111, .18);
+  background: rgba(8, 5, 2, .97);
 }
 
 .panel .close {
@@ -151,7 +144,6 @@ video {
   font-size: clamp(30px, 5vw, 46px);
   color: #f7c76f;
   font-weight: 400;
-  text-shadow: 0 0 18px rgba(247, 199, 111, .28);
 }
 
 .copy p {

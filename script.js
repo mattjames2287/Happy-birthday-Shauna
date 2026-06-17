@@ -1,39 +1,52 @@
+const storyVideo = document.getElementById("storyVideo");
+
 function openModal(id) {
-const modal = document.getElementById(id);
-if (!modal) return;
-modal.classList.add("show");
-modal.setAttribute("aria-hidden", "false");
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden", "false");
 }
 
 function closeModal(id) {
-const modal = document.getElementById(id);
-if (!modal) return;
-modal.classList.remove("show");
-modal.setAttribute("aria-hidden", "true");
+  const modal = document.getElementById(id);
+  if (!modal) return;
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden", "true");
+
+  if (id === "videoModal" && storyVideo) {
+    storyVideo.pause();
+    storyVideo.currentTime = 0;
+  }
 }
 
-document.getElementById("playBtn").addEventListener("click", () => {
-window.open(
-"https://www.youtube.com/embed/DgPhzV5i_dQ?autoplay=1",
-"_blank"
-);
+document.getElementById("playBtn").addEventListener("click", async () => {
+  openModal("videoModal");
+
+  if (!storyVideo) return;
+
+  try {
+    storyVideo.currentTime = 0;
+    await storyVideo.play();
+  } catch (error) {
+    // Some mobile browsers may still require tapping play inside the video controls.
+  }
 });
 
 document.querySelectorAll("[data-open]").forEach((button) => {
-button.addEventListener("click", () => openModal(button.dataset.open));
+  button.addEventListener("click", () => openModal(button.dataset.open));
 });
 
 document.querySelectorAll("[data-close]").forEach((button) => {
-button.addEventListener("click", () => closeModal(button.dataset.close));
+  button.addEventListener("click", () => closeModal(button.dataset.close));
 });
 
 document.querySelectorAll(".modal").forEach((modal) => {
-modal.addEventListener("click", (event) => {
-if (event.target === modal) closeModal(modal.id);
-});
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) closeModal(modal.id);
+  });
 });
 
 document.addEventListener("keydown", (event) => {
-if (event.key !== "Escape") return;
-document.querySelectorAll(".modal.show").forEach((modal) => closeModal(modal.id));
+  if (event.key !== "Escape") return;
+  document.querySelectorAll(".modal.show").forEach((modal) => closeModal(modal.id);
 });
