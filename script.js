@@ -1,5 +1,3 @@
-const storyVideo = document.getElementById("storyVideo");
-
 function openModal(id) {
   const modal = document.getElementById(id);
   if (!modal) return;
@@ -12,23 +10,13 @@ function closeModal(id) {
   if (!modal) return;
   modal.classList.remove("show");
   modal.setAttribute("aria-hidden", "true");
-
-  if (id === "videoModal" && storyVideo) {
-    storyVideo.pause();
-  }
 }
 
-document.getElementById("playBtn").addEventListener("click", async () => {
-  openModal("videoModal");
-
-  if (!storyVideo) return;
-
-  try {
-    storyVideo.currentTime = 0;
-    await storyVideo.play();
-  } catch (error) {
-    // iOS/Safari may require tapping play inside the video controls.
-  }
+document.getElementById("playBtn").addEventListener("click", () => {
+  window.open(
+    "https://drive.google.com/file/d/1D9jnOg0aeYifJGF3xrbGT5eC612uT0a3/preview",
+    "_blank"
+  );
 });
 
 document.querySelectorAll("[data-open]").forEach((button) => {
