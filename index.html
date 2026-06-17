@@ -1,58 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy 30th Shauna</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Happy 30th Shauna</title><link rel="stylesheet" href="style.css"></head>
 <body>
-  <main class="page">
-    <section class="hero">
-      <div class="heart">❤️</div>
-      <p class="eyebrow">A song for you</p>
-      <h1>Happy 30th, Shauna</h1>
-      <p class="subtitle">Almost ten years, one beautiful life, and forever still ahead.</p>
+<div class="poster">
+<div class="overlay-center">
+<button class="play-btn" onclick="openVideo()">▶<span>PLAY</span></button>
+<div class="mini-links">
+<button onclick="openLetter()">♡ Read My Letter</button>
+<button onclick="openLyrics()">♫ Song Lyrics</button>
+</div>
+</div>
+</div>
 
-      <div class="player-card">
-        <p class="song-title">“Here’s To Thirty, Shauna”</p>
-        <audio controls preload="metadata">
-          <source src="assets/heres-to-thirty-shauna.mp3" type="audio/mpeg" />
-          Your phone does not support audio playback.
-        </audio>
-        <p class="tap-note">Press play whenever you're ready.</p>
-      </div>
-    </section>
+<div id="videoModal" class="modal"><div class="modal-inner"><span class="close" onclick="closeModal('videoModal')">×</span><video id="video" controls><source src="assets/slideshow.mp4" type="video/mp4"></video></div></div>
 
-    <section class="message-card">
-      <h2>Shauna,</h2>
-      <p>
-        I wanted to give you something that was more than just a gift.
-        Something you could keep, come back to, and know exactly how much you mean to me.
-      </p>
-      <p>
-        Almost ten years together, marriage, our home, our memories, and Lorenzo —
-        every part of this life is better because it is with you.
-      </p>
-      <p>
-        Happy 30th birthday. I love you more than I could ever fit into one song.
-      </p>
-      <p class="signature">— Matt</p>
-    </section>
+<div id="letterModal" class="modal"><div class="panel"><span class="close" onclick="closeModal('letterModal')">×</span><h2>My Letter</h2><p>Shauna, I wanted to give you something that was more than just a gift. Something you could keep, come back to, and know exactly how much you mean to me. Almost ten years together, marriage, our home, our memories, and Lorenzo — every part of this life is better because it is with you. Happy 30th birthday. I love you more than I could ever fit into one song. — Matt</p></div></div>
 
-    <section class="photos">
-      <h2>Us</h2>
-      <div class="photo-grid">
-        <img src="assets/photo-1.jpg" alt="Shauna and Matt memory 1" />
-        <img src="assets/photo-2.jpg" alt="Shauna and Matt memory 2" />
-        <img src="assets/photo-3.jpg" alt="Family memory with Lorenzo" />
-      </div>
-      
-    </section>
+<div id="lyricsModal" class="modal"><div class="panel"><span class="close" onclick="closeModal('lyricsModal')">×</span><h2>Song Lyrics</h2><p>Here's to thirty, Shauna... and here's to forever.</p></div></div>
 
-    <footer>
-      Here's to thirty. Here's to Lorenzo. Here's to almost ten years. Here's to forever.
-    </footer>
-  </main>
-</body>
-</html>
+<script>
+function openVideo(){document.getElementById('videoModal').style.display='flex';document.getElementById('video').play();}
+function openLetter(){document.getElementById('letterModal').style.display='flex';}
+function openLyrics(){document.getElementById('lyricsModal').style.display='flex';}
+function closeModal(id){document.getElementById(id).style.display='none';let v=document.getElementById('video');if(v)v.pause();}
+</script>
+</body></html>
